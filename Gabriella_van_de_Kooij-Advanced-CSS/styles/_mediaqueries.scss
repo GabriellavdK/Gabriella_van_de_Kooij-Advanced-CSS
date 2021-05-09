@@ -1,0 +1,44 @@
+@media (min-width: 768px) {
+    .portfolio {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 25px;
+        grid-template-areas:
+            " a b "
+            " c d "
+            " e f "
+            " g h ";
+    }
+
+    .social-buttons {
+        & li {
+            max-width: 50px;
+        }
+
+        & .icon::before {
+            padding: 15px;
+        }
+    }
+}
+
+@media (min-width: 1020px) {
+    .portfolio {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 25px;
+        grid-template-areas:
+            " a b c "
+            " d e f "
+            " g h . ";
+    }
+
+    .social-buttons {
+        & li {
+            max-width: 60px;
+        }
+
+        & .icon::before {
+            padding: 20px;
+        }
+    }
+}

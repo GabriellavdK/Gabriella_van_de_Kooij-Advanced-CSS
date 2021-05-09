@@ -1,0 +1,227 @@
+@import "./variables";
+
+body {
+    background-color: $grey-color;
+    font-family: $font;
+    font-size: 20px;
+    margin: 0;
+}
+
+.testimonial-card {
+    background-color: $white-color;
+    border-radius: 25px;
+    @include width_content();
+    box-shadow: 0 10px 15px #7a818d;
+
+    &__text {
+        color: darkslategray;
+        font-weight: 500;
+        line-height: 2;
+        padding: 20px 30px 50px;
+    }
+
+    &__footer {
+        background-color: $purple-color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 0 0 25px 25px;
+        padding-bottom: 30px;
+
+        & h1 {
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 24px;
+            color: $white-color;
+            margin: 10px;
+            letter-spacing: 2px;
+        }
+
+        & a {
+            color: $grey-color;
+        }
+
+        & img {
+            width: 120px;
+            border-radius: 100px;
+            border: 5px solid $white-color;
+            margin-top: -60px;
+        }
+    }
+}
+
+.portfolio {
+    display: grid;
+    @include width_content();
+    gap: 1%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        " a "
+        " b "
+        " c "
+        " d "
+        " e "
+        " f "
+        " g "
+        " h ";
+
+    &__img {
+        position: relative;
+        background-color: $purple-color;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        & img {
+            width: 100%;
+            border-radius: 10px;
+            opacity: 1;
+            transition: opacity 1s;
+        }
+
+        &:hover img {
+            transform: scale(1.3);
+            opacity: 0;
+            transition: transform, opacity 1s;
+        }
+
+        &:hover>.portfolio__overlay {
+            opacity: 1;
+        }
+
+        &--1 {
+            grid-area: a;
+        }
+
+        &--2 {
+            grid-area: b;
+        }
+
+        &--3 {
+            grid-area: c;
+        }
+
+        &--4 {
+            grid-area: d;
+        }
+
+        &--5 {
+            grid-area: e;
+        }
+
+        &--6 {
+            grid-area: f;
+        }
+
+        &--7 {
+            grid-area: g;
+        }
+
+        &--8 {
+            grid-area: h;
+        }
+    }
+
+    & a {
+        font-family: $font;
+        font-size: 16px;
+        text-decoration: none;
+        color: black;
+        position: absolute;
+        opacity: 0;
+        background-color: $white-color;
+        padding: 10px 15px;
+        border-radius: 3px;
+        border: 1px solid black;
+    }
+}
+
+.social-buttons {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    white-space: nowrap;
+    position: fixed;
+    bottom: 5%;
+    right: 0;
+
+    & li {
+        max-width: 40px;
+        transition: max-width 1s;
+
+        &:hover {
+            max-width: 300px;
+            transition: max-width 1s;
+        }
+    }
+
+    & a {
+        color: $white-color;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    & .icon::before {
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        color: $white-color;
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    &--blog {
+        background-color: #e17b77;
+
+        & .icon::before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f5fc";
+        }
+    }
+
+    &--twitter {
+        background-color: #00aced;
+
+        & .icon::before {
+            @include font-awesome-brand();
+            content: "\f099";
+        }
+    }
+
+    &--linkedin {
+        background-color: #007bb6;
+
+        & .icon::before {
+            @include font-awesome-brand();
+            content: "\f0e1";
+        }
+    }
+
+    &--facebook {
+        background-color: #3b5998;
+
+        & .icon::before {
+            @include font-awesome-brand();
+            content: "\f39e";
+        }
+    }
+
+    &--github {
+        background-color: #333;
+
+        & .icon::before {
+            @include font-awesome-brand();
+            content: "\f09b";
+        }
+    }
+}
+
+//@Media queries
+@import "./mediaqueries";
