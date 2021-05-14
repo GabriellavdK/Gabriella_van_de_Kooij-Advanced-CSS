@@ -68,12 +68,12 @@ body {
   width: 100%;
   border-radius: 10px;
   opacity: 1;
-  transition: opacity 1s;
+  transition: transform 1s, opacity 1s;
 }
 .portfolio__img:hover img {
   transform: scale(1.3);
   opacity: 0;
-  transition: transform, opacity 1s;
+  transition: transform 1s, opacity 1s;
 }
 .portfolio__img:hover > .portfolio__overlay {
   opacity: 1;
